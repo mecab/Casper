@@ -314,7 +314,6 @@ blockquote {
 
 blockquote p {
     margin: 0.8em 0;
-    font-style: italic;
 }
 
 blockquote small {
@@ -1098,7 +1097,6 @@ body:not(.post-template) .post-title {
 }
 
 .footnotes {
-    font-style: italic;
     font-size: 1.3rem;
     line-height: 1.6em;
 }
@@ -1142,7 +1140,6 @@ body:not(.post-template) .post-title {
     list-style: none;
     font-size: 1.4rem;
     line-height: 1;
-    font-style: italic;
     color: #9EABB3;
 }
 
