@@ -26,7 +26,7 @@ Note that we decided to use *gothic* (sans-serif) rather than *mincho* (serif) d
    優先順位: 游ゴシック→ヒラギノ角ゴ→メイリオ
    （`mincho`は: 游明朝→ヒラギノ明朝→S明朝E）
    
-   ただし見出しはメイリオ→ヒラギノ角ゴ→游ゴシクです。これは元々指定されているOpen Sans Boldとの調和を考慮した結果です。
+   ただし見出しはメイリオ→ヒラギノ角ゴ→游ゴシックです。これは元々指定されているOpen Sans Boldとの調和を考慮した結果です。
 
 2. 斜体をほとんどの部分で利用しないようにしました
 
@@ -62,7 +62,7 @@ body {
 
 ## Copyright & License (for the modifications)
 
-Copyright (c) 2015 @mecab - Released under the MIT License.
+Copyright (c) 2016 @mecab - Released under the MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
