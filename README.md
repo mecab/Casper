@@ -32,6 +32,8 @@ Note that we decided to use *gothic* (sans-serif) rather than *mincho* (serif) d
 
 3. 字間を調整しました
 
+4. 記事個別ページ下部のシェアボタンの中に、はてなブックマーク用のボタンを追加しました
+
 ## その他の変更
 
 1. `pre`や`code`などに指定されているInconsolataはOSにデフォルトで入っているフォントではないのでConsolasとMonacoにフォールバックするようにしました（Webフォントを読み込んでいないのはバグ？）
