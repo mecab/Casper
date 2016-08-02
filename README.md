@@ -24,7 +24,7 @@ Note that we decided to use *gothic* (sans-serif) rather than *mincho* (serif) d
 
 1. 日本語フォントを指定しました
    優先順位: 游ゴシック→ヒラギノ角ゴ→メイリオ
-   （`mincho`は: 游明朝→ヒラギノ明朝→S明朝E）
+   （`mincho`は: 游明朝→ヒラギノ明朝→HGS明朝E）
    
    ただし見出しはメイリオ→ヒラギノ角ゴ→游ゴシックです。これは元々指定されているOpen Sans Boldとの調和を考慮した結果です。
 
