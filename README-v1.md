@@ -4,7 +4,7 @@ A fork of [TryGhost/Casper](http://github.com/tryghost/casper), the default them
 
 Note that we decided to use *gothic* (sans-serif) rather than *mincho* (serif) due to limited number of clients which have beautiful serif fonts, while you can use `mincho` branch to use mincho up to your preference.
 
-ブログエンジンGhostの[Ghost](http://github.com/tryghost/ghost/)デフォルトテーマであるCasperを日本語対応させたフォークです。各種フォントに日本語フォントを指定し、日本語に合わせて若干の調整を行っています。
+ブログエンジンGhostの[Ghost](http://github.com/tryghost/ghost/)デフォルトテーマであるCasperを日本語対応させたフォークです。日本語のコンテンツを扱う際に発生する問題を修正し、また読みやすさの面で日本語に合わせて若干の修正を行っています。
 
 綺麗な日本語の明朝体を表示できる環境がまだ完全に普及しきっていないことを考慮して、オリジナルでは本文はセリフ体であるところを、記事本文はゴシック体に変更しています。明朝体を利用したい場合、`mincho`ブランチを利用することができます。
 
@@ -16,25 +16,31 @@ Note that we decided to use *gothic* (sans-serif) rather than *mincho* (serif) d
 
 3. Webフォントは新たに追加しない
 
+## 修正した問題
+
+1. 見出しにおいて、任意の合字（discretionary ligatures）が有効化されているため、意図しない組文字化が行われてしまうこと（[https://github.com/TryGhost/Casper/pull/227](https://github.com/TryGhost/Casper/pull/227)）
+
 ## 日本語に合わせた調整
 
-1. 日本語フォントを指定しました。
+1. 日本語フォントを指定しました
+   優先順位: 游ゴシック→ヒラギノ角ゴ→メイリオ
+   （`mincho`は: 游明朝→ヒラギノ明朝→HGS明朝E）
+   
+   ただし見出しはメイリオ→ヒラギノ角ゴ→游ゴシックです。これは元々指定されているOpen Sans Boldとの調和を考慮した結果です。
 
-   優先順位:
-    - Windows: 游ゴシック → ヒラギノ角ゴ → メイリオ
-    - Mac: ヒラギノ角ゴ（-apple-system, BlinkMacSystemFont） → 游ゴシック → メイリオ
+2. 斜体をほとんどの部分で利用しないようにしました
 
-   （`mincho`は: 游明朝→ヒラギノ明朝→HGS明朝E。ただし太字部分は上記に従いゴシックになります。）
+3. 字間を調整しました
 
-   ただし見出しはヒラギノ角ゴ→メイリオ→游ゴシックです。これは元々指定されているOpen Sans Boldとの調和を考慮した結果です。
+4. 記事個別ページ下部のシェアボタンの中に、はてなブックマーク用のボタンを追加しました
 
-   游ゴシックは、游ゴシック Regularだと細すぎるのでMediumを優先して使うようにしています。（参考: https://wemo.tech/1155）
+## その他の変更
 
-2. 字間を調整しました。
+1. `pre`や`code`などに指定されているInconsolataはOSにデフォルトで入っているフォントではないのでConsolasとMonacoにフォールバックするようにしました（Webフォントを読み込んでいないのはバグ？）
 
 ## 好みが分かれそうなところ
 
-記事本文の欧文には、日本語フォントの従属欧文を利用せず、Open Sans（ゴシック体版）あるいはGeorgia（明朝体版）にしました。これは日本語で使ったフォントとの調和も悪くないように感じたので、方針1に沿ったという理由からです。従属欧文を利用したい場合は、`assets/css/screen.css`内を`Georgia`または`Open Sans`で検索し、日本語フォントと同時に指定されている部分について、当該欧文フォント名を削除してください。
+記事本文の欧文には、日本語フォントの従属欧文を利用せず、Open Sans（ゴシック体版）あるいはMerriweather（明朝体版）にしました。これは日本語で使ったフォントとの調和も悪くないように感じたので、方針1に沿ったという理由からです。従属欧文を利用したい場合は、`assets/css/screen.css`内を`Merriweather`または`Open Sans`で検索し、日本語フォントと同時に指定されている部分について、当該欧文フォント名を削除してください。
 
 例:
 
@@ -55,13 +61,6 @@ body {
     ...
 }
 ```
-
-## (v1版との違い)
-
-Casper v1系時代に行っていたいくつかの修正は削除されました。具体的には以下のものです。v1向けの説明は[README-v1.md](./README-v1.md)にあります。
-
-- 任意の合字 (dlig) の無効化: Casper本体で修正されたようです。
-- はてなブックマークでシェアリンクの追加: そもそも記事をシェアするリンクが削除されました。
 
 ## Copyright & License (for the modifications)
 
